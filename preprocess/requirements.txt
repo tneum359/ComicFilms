@@ -1,0 +1,23 @@
+Pillow==10.2.0
+numpy==1.25.2
+transformers==4.37.0
+torch==2.2.0
+torchvision==0.17.0
+einops==0.7.0
+shapely==2.0.2
+timm==0.9.12
+sympy==1.12.1
+tqdm==4.66.1
+diffusers==0.32.2
+huggingface-hub==0.19.4
+accelerate==1.5.2
+ultralytics==8.0.196
+opencv-python-headless==4.8.1.78
+bs4==0.0.1
+selenium==4.11.2
+requests==2.31.0
+beautifulsoup4==4.12.2
+pulp==2.8.1
+
+
+# pip install -r requirements.txt --only-binary=:all:
