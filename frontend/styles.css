@@ -39,7 +39,7 @@
 
 /* Framix Brand Elements */
 .framix-logo {
-  height: 60px;
+  height: 70px;
   width: auto;
   transition: transform 0.3s ease;
 }
@@ -140,8 +140,8 @@
 .framix-button:hover {
   background-color: var(--framix-primary);
   color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
@@ -152,6 +152,25 @@
   color: var(--framix-primary);
   padding: 2rem 0;
   margin-top: 3rem;
+}
+
+/* Dark Mode Footer */
+.dark-mode .framix-footer {
+  background-color: var(--framix-dark);
+  border-color: var(--framix-accent);
+  color: var(--framix-dark-text);
+}
+
+.dark-mode .framix-footer a {
+  color: var(--framix-accent);
+}
+
+.dark-mode .framix-footer a:hover {
+  color: var(--framix-light);
+}
+
+.dark-mode .text-sm {
+  color: var(--framix-dark-text);
 }
 
 /* Enhanced Utility Classes */
@@ -170,7 +189,6 @@
 /* Enhanced Component Styles */
 .nav-link {
   position: relative;
-  color: var(--framix-primary);
   padding: 1rem 1.5rem;
   transition: all 0.3s ease;
   border-radius: 0.5rem;
@@ -288,19 +306,110 @@ img {
   background-color: var(--framix-light);
   border-bottom: 3px solid var(--framix-primary);
   transition: all 0.3s ease;
-  padding: 1rem 0;
+  padding: 0.7rem 0;
+  position: relative; /* For absolute positioning context */
 }
 
-/* Dark Mode Styles */
-.dark-mode {
-  background-color: var(--framix-dark);
-  color: var(--framix-dark-text);
+/* Logo Container and Logo Styles */
+.logo-container {
+  width: 200px;  /* Increased from 170px */
+  height: 80px;  /* Increased from 68px */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-.dark-mode .framix-header,
-.dark-mode .framix-footer {
+.framix-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Navigation Link Styles */
+.nav-link {
+  position: relative;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  color: var(--framix-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--framix-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link:hover {
+  background-color: var(--framix-primary);
+  color: var(--framix-light) !important; /* Light colored text */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.framix-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--framix-primary);
+  color: var(--framix-primary);
+  transition: all 0.3s ease;
+}
+
+.framix-button:hover {
+  background-color: var(--framix-primary);
+  color: var(--framix-light) !important; /* Light colored text */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Button Styles */
+.search-button {
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  color: var(--framix-primary);
+}
+
+.search-button:hover {
+  background-color: var(--framix-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .framix-header {
   background-color: var(--framix-dark);
   border-color: var(--framix-accent);
+}
+
+.dark-mode .nav-link {
+  color: var(--framix-light);
+}
+
+.dark-mode .nav-link::after {
+  background-color: var(--framix-accent);
+}
+
+.dark-mode .nav-link:hover {
+  background-color: var(--framix-accent);
+  color: var(--framix-dark) !important;
 }
 
 .dark-mode .framix-button {
@@ -310,16 +419,7 @@ img {
 
 .dark-mode .framix-button:hover {
   background-color: var(--framix-accent);
-  color: var(--framix-dark);
-}
-
-.dark-mode .nav-link {
-  color: var(--framix-light);
-}
-
-.dark-mode .nav-link:hover {
-  background-color: var(--framix-accent);
-  color: var(--framix-dark);
+  color: var(--framix-dark) !important;
 }
 
 /* Universe Section Enhancement */
@@ -387,9 +487,47 @@ img {
 
 /* Search Button */
 button[data-llama-id="32"] {
-  font-size: 1.25rem;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  color: var(--framix-primary);
+  background-color: transparent;
+  border: 2px solid var(--framix-primary);
+  border-radius: 0.5rem;
   transition: all 0.3s ease;
+}
+
+button[data-llama-id="32"]:hover {
+  background-color: var(--framix-primary);
+  color: var(--framix-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Search Button */
+.dark-mode button[data-llama-id="32"] {
+  color: var(--framix-light);
+  border-color: var(--framix-accent);
+  background-color: transparent;
+}
+
+.dark-mode button[data-llama-id="32"]:hover {
+  background-color: var(--framix-accent);
+  color: var(--framix-dark);
+}
+
+/* Search Input Styles (when search is active) */
+.search-input {
+  background-color: var(--framix-light);
+  color: var(--framix-primary);
+  border: 2px solid var(--framix-primary);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.dark-mode .search-input {
+  background-color: var(--framix-dark);
+  color: var(--framix-light);
+  border-color: var(--framix-accent);
 }
 
 /* Background and Header Styles */
@@ -442,6 +580,109 @@ body {
 }
 
 .dark-mode .dark-mode-button:hover {
+  background-color: var(--framix-accent);
+  color: var(--framix-dark);
+}
+
+/* Logo Hover Animation */
+.framix-logo:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Navigation Link Hover Animation */
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--framix-primary);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Banner Text Animation */
+.framix-banner .text-shadow {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.framix-banner:hover .text-shadow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Hover Animation */
+.comic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Header Styles */
+.framix-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Changed to flex-start to help with spacing */
+  padding-left: 210px; /* Increased from 180px to make space for larger logo */
+  gap: 2rem;
+}
+
+/* Logo Container - moved left and slightly smaller */
+.logo-container {
+  width: 200px;  /* Even smaller */
+  height: 80px;  /* Even smaller */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 0;  /* Remove padding to push all the way left */
+  margin-right: 3rem; /* Space after logo */
+}
+
+/* Navigation Section */
+nav {
+  margin-right: 2rem; /* Space between nav and buttons */
+}
+
+nav ul {
+  display: flex;
+  gap: 2.5rem; /* Adjusted space between nav items */
+}
+
+/* Right-side buttons container */
+.flex.items-center {
+  margin-left: auto; /* Pushes buttons to the right */
+  gap: 1.5rem; /* Space between buttons */
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  background-color: transparent;
+  border: 2px solid var(--framix-primary);
+  color: var(--framix-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--framix-primary);
+  color: var(--framix-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Toggle Button - Dark Mode State */
+.dark-mode .dark-mode-toggle {
+  border-color: var(--framix-accent);
+  color: var(--framix-accent);
+}
+
+.dark-mode .dark-mode-toggle:hover {
   background-color: var(--framix-accent);
   color: var(--framix-dark);
 } 

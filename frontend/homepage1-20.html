@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Framix - Marvel &amp; DC Movies</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-framix-light" style="cursor: default;">
+<div class="w-full" id="wrap">
+<header class="framix-header shadow" id="header">
+  <!-- Logo container -->
+  <div class="logo-container">
+    <a href="/">
+      <img alt="Framix Logo" class="framix-logo" src="images/branding/framix-logo.png">
+    </a>
+  </div>
+  
+  <div class="container mx-auto flex items-center">
+    <div class="flex items-center flex-grow justify-between">
+      <nav>
+        <ul class="flex">
+          <li>
+            <a class="nav-link text-xl font-bold text-primary hover:text-secondary" href="#">MARVEL</a>
+          </li>
+          <li>
+            <a class="nav-link text-xl font-bold text-primary hover:text-secondary" href="#">DC</a>
+          </li>
+          <li>
+            <a class="nav-link text-xl font-bold text-primary hover:text-secondary" href="#">POPULAR</a>
+          </li>
+          <li>
+            <a class="nav-link text-xl font-bold text-primary hover:text-secondary" href="#">NEW</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="flex items-center gap-4">
+        <a class="framix-button px-6 py-3 text-xl border-2 rounded-lg" href="#">HOME</a>
+        <button class="p-4 rounded-lg text-xl" data-llama-id="32">Search</button>
+        <button class="dark-mode-toggle p-4 rounded-lg text-xl">🌙</button>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="relative w-full">
+  <div class="main_banner_big relative">
+    <div class="relative">
+      <a href="#">
+        <img alt="Main Banner" class="w-full h-[600px] framix-banner" src="images/banners/main-banner.jpg">
+        <!-- Overlay text positioned in the middle of the banner -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+          <h2 class="text-5xl font-bold mb-4 text-shadow">Welcome to Framix</h2>
+          <p class="text-2xl text-shadow">Your Ultimate Marvel & DC Movie Experience</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- Small banners with adjusted positioning -->
+  <div class="absolute top-8 right-8 flex flex-col space-y-6">
+    <a class="block transition-transform hover:scale-105" href="#">
+      <img alt="Marvel Universe" class="w-56 thumbnail rounded-lg shadow-lg" src="images/banners/marvel-universe.jpg">
+    </a>
+    <a class="block transition-transform hover:scale-105" href="#">
+      <img alt="DC Universe" class="w-56 thumbnail rounded-lg shadow-lg" src="images/banners/dc-universe.jpg">
+    </a>
+  </div>
+</section>
+
+<section class="mt-12 px-4" id="hotAndNew">
+<h2 class="text-2xl font-bold mb-4 text-primary">New Releases</h2>
+<div class="overflow-x-auto">
+<ul class="flex space-x-4">
+<li class="comic-card w-48 flex-shrink-0 hover:bg-light">
+<a class="block" href="#">
+<img alt="Spider-Man" class="w-full h-auto framix-card" src="images/marvel/spider-man.jpg">
+<div class="p-3">
+<div class="text-sm font-semibold">Spider-Man: No Way Home</div>
+<span class="inline-block mt-1 bg-primary text-white text-xs px-2 rounded">NEW</span>
+</div>
+</a>
+</li>
+<li class="comic-card w-48 flex-shrink-0 hover:bg-light">
+<a class="block" href="#">
+<img alt="Iron Man" class="w-full h-auto framix-card" src="images/marvel/iron-man.jpg">
+<div class="p-3">
+<div class="text-sm font-semibold">Iron Man: Armored Legacy</div>
+<span class="inline-block mt-1 bg-primary text-white text-xs px-2 rounded">NEW</span>
+</div>
+</a>
+</li>
+<li class="comic-card w-48 flex-shrink-0 hover:bg-light">
+<a class="block" href="#">
+<img alt="Batman" class="w-full h-auto framix-card" src="images/dc/batman.jpg">
+<div class="p-3">
+<div class="text-sm font-semibold">Batman: The Dark Knight</div>
+<span class="inline-block mt-1 bg-primary text-white text-xs px-2 rounded">NEW</span>
+</div>
+</a>
+</li>
+</ul>
+</div>
+</section>
+<section class="mt-12 px-4" id="main_genre_wrap">
+<h2 class="text-2xl font-bold mb-4 text-primary">UNIVERSES</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="universe-card bg-gradient-to-r from-primary to-secondary text-white p-6 rounded-lg">
+<h3 class="text-2xl font-semibold mb-2">Marvel Universe</h3>
+<p class="text-sm opacity-90">Experience the epic Marvel Universe in stunning cinematic form.</p>
+</div>
+<div class="universe-card bg-gradient-to-r from-primary to-secondary text-white p-6 rounded-lg">
+<h3 class="text-2xl font-semibold mb-2">DC Universe</h3>
+<p class="text-sm opacity-90">Dive into the legendary DC Universe with spectacular film adaptations.</p>
+</div>
+</div>
+</section>
+<section class="mt-12 px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<h2 class="text-2xl font-bold mb-4 text-primary">Trending Marvel Films</h2>
+<ul class="space-y-4">
+<li class="comic-card flex items-center space-x-4 p-3">
+<span class="font-bold text-lg text-primary">1</span>
+<img alt="X-Men" class="w-16 h-16 object-cover rounded thumbnail" src="images/marvel/x-men.jpg">
+<div>
+<div class="font-semibold">X-Men: Dark Phoenix</div>
+<div class="text-xs text-gray">Marvel Studios</div>
+</div>
+</li>
+<li class="comic-card flex items-center space-x-4 p-3">
+<span class="font-bold text-lg text-primary">2</span>
+<img alt="Avengers" class="w-16 h-16 object-cover rounded thumbnail" src="images/marvel/avengers.jpg">
+<div>
+<div class="font-semibold">Avengers: Endgame</div>
+<div class="text-xs text-gray">Marvel Studios</div>
+</div>
+</li>
+<li class="comic-card flex items-center space-x-4 p-3">
+<span class="font-bold text-lg text-primary">3</span>
+<img alt="Thor" class="w-16 h-16 object-cover rounded thumbnail" src="images/marvel/thor.jpg">
+<div>
+<div class="font-semibold">Thor: Love and Thunder</div>
+<div class="text-xs text-gray">Marvel Studios</div>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h2 class="text-2xl font-bold mb-4 text-primary">Trending DC Films</h2>
+<ul class="space-y-4">
+<li class="comic-card flex items-center space-x-4 p-3">
+<span class="font-bold text-lg text-primary">1</span>
+<img alt="Superman" class="w-16 h-16 object-cover rounded thumbnail" src="images/dc/superman.jpg">
+<div>
+<div class="font-semibold">Superman: Man of Steel</div>
+<div class="text-xs text-gray">DC Studios</div>
+</div>
+</li>
+<li class="comic-card flex items-center space-x-4 p-3">
+<span class="font-bold text-lg text-primary">2</span>
+<img alt="Wonder Woman" class="w-16 h-16 object-cover rounded thumbnail" src="images/dc/wonder-woman.jpg">
+<div>
+<div class="font-semibold">Wonder Woman 1984</div>
+<div class="text-xs text-gray">DC Studios</div>
+</div>
+</li>
+<li class="comic-card flex items-center space-x-4 p-3">
+<span class="font-bold text-lg text-primary">3</span>
+<img alt="Flash" class="w-16 h-16 object-cover rounded thumbnail" src="images/dc/flash.jpg">
+<div>
+<div class="font-semibold">The Flash</div>
+<div class="text-xs text-gray">DC Studios</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<footer class="framix-footer mt-12 px-4 py-8">
+  <section class="text-center my-8">
+    <a class="framix-button mx-4" href="about.html">About</a>
+    <a class="framix-button mx-4" href="contact.html">Contact</a>
+    <a class="framix-button mx-4" href="terms.html">Terms of Service</a>
+  </section>
+  <div class="text-center text-sm">
+    ⓒ Framix. All rights reserved.
+  </div>
+</footer>
+</div>
+<!-- Add these script tags just before the closing </body> tag -->
+<script src="script.js"></script>
+</body></html>

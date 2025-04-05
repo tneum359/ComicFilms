@@ -21,9 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
             searchBar = document.createElement('input');
             searchBar.type = 'text';
             searchBar.placeholder = 'Search films...';
-            searchBar.className = 'p-2 border rounded mr-2';
+            searchBar.className = 'search-input p-2 rounded mr-2';
             searchButton.parentNode.insertBefore(searchBar, searchButton);
             searchOpen = true;
+            
+            // Focus the search input
+            searchBar.focus();
         } else {
             searchBar.remove();
             searchOpen = false;
@@ -31,12 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 3. Dark Mode Toggle
-    const header = document.querySelector('header');
-    const darkModeButton = document.createElement('button');
-    darkModeButton.innerHTML = '🌙';
-    darkModeButton.className = 'dark-mode-button';
-    header.querySelector('.flex.items-center.space-x-8').appendChild(darkModeButton);
-
+    const darkModeButton = document.querySelector('.dark-mode-toggle');
+    
     let isDarkMode = false;
     darkModeButton.addEventListener('click', () => {
         isDarkMode = !isDarkMode;
