@@ -34,7 +34,10 @@
 }
 
 * {
-  font-family: 'GT Super', serif;
+  font-family: 'Chillax', sans-serif;
+  font-weight: 300;
+  text-transform: lowercase;
+  letter-spacing: 2px;
 }
 
 /* Framix Brand Elements */
@@ -189,15 +192,23 @@
 /* Enhanced Component Styles */
 .nav-link {
   position: relative;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   transition: all 0.3s ease;
   border-radius: 0.5rem;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link:hover {
   background-color: var(--framix-primary);
-  color: white;
+  color: var(--framix-light) !important; /* Light colored text */
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -303,237 +314,164 @@ img {
 
 /* Header & Footer Styles */
 .framix-header {
+  position: relative;
   background-color: var(--framix-light);
   border-bottom: 3px solid var(--framix-primary);
   transition: all 0.3s ease;
-  padding: 0.7rem 0;
-  position: relative; /* For absolute positioning context */
+  padding: 1.25rem 2rem;
+  height: 120px; /* Increased height */
+  display: flex;
+  align-items: center;
 }
 
-/* Logo Container and Logo Styles */
+/* Dark Mode Header */
+.dark-mode .framix-header {
+  background-color: var(--framix-dark);
+  border-bottom-color: var(--framix-accent);
+}
+
+/* Logo Container */
 .logo-container {
-  width: 200px;  /* Increased from 170px */
-  height: 80px;  /* Increased from 68px */
+  width: 300px;  /* Significantly larger */
+  height: 120px; /* Significantly larger */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 0;
   margin: 0;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
 .framix-logo {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.3s ease;
 }
 
-/* Navigation Link Styles */
+/* Center Navigation */
+.center-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: 320px; /* Adjusted for larger logo */
+  margin-right: 220px; /* Space for right controls */
+}
+
 .nav-link {
   position: relative;
-  font-size: 1.1rem;
-  padding: 0.5rem 0.75rem;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
   border-radius: 0.5rem;
-  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   color: var(--framix-primary);
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: var(--framix-primary);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.nav-link:hover::after {
-  transform: scaleX(1);
-}
-
-.nav-link:hover {
-  background-color: var(--framix-primary);
-  color: var(--framix-light) !important; /* Light colored text */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Button Styles */
-.framix-button {
-  padding: 0.5rem 1.5rem;
-  font-size: 1.1rem;
-  border: 2px solid var(--framix-primary);
-  color: var(--framix-primary);
-  transition: all 0.3s ease;
-}
-
-.framix-button:hover {
-  background-color: var(--framix-primary);
-  color: var(--framix-light) !important; /* Light colored text */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Search Button Styles */
-.search-button {
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-  color: var(--framix-primary);
-}
-
-.search-button:hover {
-  background-color: var(--framix-primary);
-  color: white;
-  transform: translateY(-2px);
-}
-
-/* Dark Mode Adjustments */
-.dark-mode .framix-header {
-  background-color: var(--framix-dark);
-  border-color: var(--framix-accent);
-}
-
+/* Dark Mode Navigation */
 .dark-mode .nav-link {
   color: var(--framix-light);
 }
 
-.dark-mode .nav-link::after {
-  background-color: var(--framix-accent);
-}
-
 .dark-mode .nav-link:hover {
-  background-color: var(--framix-accent);
-  color: var(--framix-dark) !important;
-}
-
-.dark-mode .framix-button {
-  border-color: var(--framix-accent);
   color: var(--framix-accent);
-}
-
-.dark-mode .framix-button:hover {
-  background-color: var(--framix-accent);
-  color: var(--framix-dark) !important;
-}
-
-/* Universe Section Enhancement */
-.universe-card {
-  background: linear-gradient(135deg, var(--framix-primary), var(--framix-secondary));
-  padding: 2rem;
-  border-radius: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.universe-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Comic Card Enhancement */
-.comic-card {
-  border: 1px solid var(--framix-light);
-  transition: all 0.3s ease;
-  background-color: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.comic-card:hover {
-  border-color: var(--framix-primary);
-  transform: translateY(-5px);
-}
-
-.dark-mode .comic-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: var(--framix-accent);
-}
-
-.dark-mode .comic-card:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Add to your styles.css */
-.framix-card img, .framix-banner img, .thumbnail {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.framix-card img.loaded, .framix-banner img.loaded, .thumbnail.loaded {
-    opacity: 1;
-}
-
-.dark-mode .text-primary {
-    color: var(--framix-light);
-}
-
-.dark-mode .text-secondary {
-    color: var(--framix-accent);
-}
-
-.dark-mode .text-gray {
-    color: var(--framix-gray-300);
-}
-
-.dark-mode .universe-card {
-    background: linear-gradient(135deg, var(--framix-accent), var(--framix-highlight));
+/* Right Controls */
+.right-controls {
+  position: absolute;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Increased gap */
 }
 
 /* Search Button */
-button[data-llama-id="32"] {
-  padding: 0.5rem 1rem;
-  font-size: 1.1rem;
-  color: var(--framix-primary);
+.search-button {
   background-color: transparent;
   border: 2px solid var(--framix-primary);
+  color: var(--framix-primary);
+  padding: 0.875rem 1.5rem;
+  font-size: 1.25rem;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
 }
 
-button[data-llama-id="32"]:hover {
-  background-color: var(--framix-primary);
+/* Dark Mode Search */
+.dark-mode .search-button {
+  border-color: var(--framix-light);
   color: var(--framix-light);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark Mode Search Button */
-.dark-mode button[data-llama-id="32"] {
-  color: var(--framix-light);
+.dark-mode .search-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
   border-color: var(--framix-accent);
+  color: var(--framix-accent);
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
   background-color: transparent;
+  border: 2px solid var(--framix-primary);
+  color: var(--framix-primary);
+  padding: 0.875rem 1.5rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
 }
 
-.dark-mode button[data-llama-id="32"]:hover {
-  background-color: var(--framix-accent);
-  color: var(--framix-dark);
+/* Dark Mode Toggle in Dark Mode */
+.dark-mode .dark-mode-toggle {
+  border-color: var(--framix-light);
+  color: var(--framix-light);
 }
 
-/* Search Input Styles (when search is active) */
+.dark-mode .dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--framix-accent);
+  color: var(--framix-accent);
+}
+
+/* Search Input Styles */
 .search-input {
   background-color: var(--framix-light);
   color: var(--framix-primary);
   border: 2px solid var(--framix-primary);
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1.25rem;
+  width: 250px; /* Increased width */
 }
 
+/* Dark Mode Search Input */
 .dark-mode .search-input {
   background-color: var(--framix-dark);
   color: var(--framix-light);
-  border-color: var(--framix-accent);
+  border-color: var(--framix-light);
 }
 
-/* Background and Header Styles */
-body {
-  background-color: var(--framix-light);
-  transition: background-color 0.3s ease;
+.dark-mode .search-input:focus {
+  border-color: var(--framix-accent);
+  outline: none;
+}
+
+/* Hover Effects */
+.nav-link:hover,
+.search-button:hover,
+.dark-mode-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Hover Shadow */
+.dark-mode .nav-link:hover,
+.dark-mode .search-button:hover,
+.dark-mode .dark-mode-toggle:hover {
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 
 /* Banner Styles */
@@ -685,4 +623,466 @@ nav ul {
 .dark-mode .dark-mode-toggle:hover {
   background-color: var(--framix-accent);
   color: var(--framix-dark);
-} 
+}
+
+/* Global Font Settings */
+body {
+  font-family: 'Chillax', sans-serif;
+  font-weight: 300;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+}
+
+/* Title Styles */
+.title-container {
+  text-align: center;
+  padding: 2rem 0;
+  background: var(--framix-light);
+}
+
+.new-arrivals-title {
+  font-family: 'Chillax', sans-serif;
+  font-weight: 300;
+  font-size: 4.5rem;
+  color: var(--framix-primary);
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+  margin: 0;
+  text-transform: lowercase;
+}
+
+/* Comic Display Styles */
+.comic-display {
+  width: 100%;
+  height: 70vh; /* Reduced height to fit closer to title */
+  background: var(--framix-light);
+  display: flex;
+  align-items: flex-start; /* Changed from center to move up */
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 2rem; /* Add space between title and carousel */
+}
+
+.comic-container {
+  width: 100%;
+  max-width: 1800px;
+  height: 600px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comic {
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  background: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.comic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.comic h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 0.75rem;
+  margin: 0;
+  border-radius: 0 0 7px 7px;
+  font-size: 1.25rem;
+  text-align: center;
+  font-family: 'Chillax', sans-serif;
+  font-weight: 300;
+  text-transform: lowercase;
+}
+
+/* Comic Positions */
+.position-1 {
+  width: 200px;
+  height: 300px;
+  left: 15%; /* Moved in from 10% */
+  transform: translateX(-50%) translateZ(-200px);
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.position-2 {
+  width: 240px;
+  height: 360px;
+  left: 32%; /* Adjusted for better spacing */
+  transform: translateX(-50%) translateZ(-100px);
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.position-3 {
+  width: 320px;
+  height: 480px;
+  left: 50%;
+  transform: translateX(-50%) translateZ(0);
+  z-index: 3;
+  opacity: 1;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.position-4 {
+  width: 240px;
+  height: 360px;
+  left: 68%; /* Adjusted for better spacing */
+  transform: translateX(-50%) translateZ(-100px);
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.position-5 {
+  width: 200px;
+  height: 300px;
+  left: 85%; /* Moved in from 90% */
+  transform: translateX(-50%) translateZ(-200px);
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* New Arrow Navigation Styles */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.nav-button {
+  background: var(--framix-primary);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav-button:hover {
+  background: var(--framix-accent);
+  transform: scale(1.1);
+}
+
+.nav-button.prev::before {
+  content: "←";
+  padding-right: 3px;
+}
+
+.nav-button.next::before {
+  content: "→";
+  padding-left: 3px;
+}
+
+/* Dark mode adjustments */
+.dark-mode .nav-button {
+  background: var(--framix-accent);
+}
+
+.dark-mode .nav-button:hover {
+  background: var(--framix-primary);
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .comic-display,
+.dark-mode .title-container {
+  background: var(--framix-dark);
+}
+
+.dark-mode .new-arrivals-title {
+  color: var(--framix-accent);
+  text-shadow: 3px 3px 0 rgba(255,255,255,0.1);
+}
+
+.dark-mode .comic {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.dark-mode .comic h3 {
+  background: rgba(0,0,0,0.9);
+}
+
+/* Remove transform scale on hover, only keep shadow enhancement */
+.comic:hover {
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Remove any special hover transforms for position-3 */
+.comic.position-3:hover {
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1400px) {
+  .new-arrivals-title {
+    font-size: 4rem;
+  }
+  
+  .position-1 { left: 5%; }
+  .position-2 { left: 25%; }
+  .position-4 { left: 75%; }
+  .position-5 { left: 95%; }
+}
+
+@media (max-width: 1200px) {
+  .new-arrivals-title {
+    font-size: 3.5rem;
+  }
+  
+  .position-1 { width: 180px; height: 270px; }
+  .position-2 { width: 220px; height: 330px; }
+  .position-3 { width: 280px; height: 420px; }
+  .position-4 { width: 220px; height: 330px; }
+  .position-5 { width: 180px; height: 270px; }
+}
+
+/* Add this to your CSS to make comics clearly clickable */
+.comic {
+    cursor: pointer;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comic:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Updated Tags Section Styles */
+.tags-and-grid-section {
+    padding: 2rem 4rem;
+    background: var(--framix-light);
+}
+
+.tags-header {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    align-items: flex-start; /* Align items to top */
+}
+
+.tags-title {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 300;
+    font-size: 4.5rem; /* Much larger title */
+    color: var(--framix-primary);
+    text-transform: lowercase;
+    margin: 0;
+    min-width: max-content; /* Prevent title from wrapping */
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1rem; /* Align with the middle of the title */
+    flex: 1;
+}
+
+.tag-checkbox {
+    position: relative;
+    cursor: pointer;
+}
+
+.tag-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.tag-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Chillax', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    background: transparent;
+    border: 2px solid var(--framix-primary);
+    color: var(--framix-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-transform: lowercase;
+    white-space: nowrap; /* Keep tag text on one line */
+}
+
+.tag-icon {
+    font-size: 1.2rem;
+}
+
+/* Checkbox checked state */
+.tag-checkbox input:checked + .tag-button {
+    background: var(--framix-primary);
+    color: white;
+}
+
+.tag-checkbox:hover .tag-button {
+    background: var(--framix-primary);
+    color: white;
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .tags-header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .tags-title {
+        font-size: 4rem;
+    }
+
+    .tags-list {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .tags-and-grid-section {
+        padding: 2rem 2rem;
+    }
+
+    .tags-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Dark mode adjustments */
+.dark-mode .tag-button {
+    border-color: var(--framix-accent);
+    color: var(--framix-accent);
+}
+
+.dark-mode .tag-checkbox input:checked + .tag-button {
+    background: var(--framix-accent);
+    color: var(--framix-dark);
+}
+
+.dark-mode .tag-checkbox:hover .tag-button {
+    background: var(--framix-accent);
+    color: var(--framix-dark);
+    opacity: 0.8;
+}
+
+/* Comics Grid */
+.comics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.grid-comic {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    aspect-ratio: 2/3;
+    cursor: pointer;
+}
+
+.grid-comic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.grid-comic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-comic h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 0.75rem;
+    margin: 0;
+    font-family: 'Chillax', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: lowercase;
+}
+
+/* Footer */
+.site-footer {
+    background: var(--framix-light);
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Chillax', sans-serif;
+    font-weight: 300;
+    color: var(--framix-primary);
+    font-size: 1rem;
+    text-transform: lowercase;
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .tags-and-grid-section,
+.dark-mode .site-footer {
+    background: var(--framix-dark);
+}
+
+.dark-mode .tag-button {
+    border-color: var(--framix-accent);
+    color: var(--framix-accent);
+}
+
+.dark-mode .tag-button:hover,
+.dark-mode .tag-button.active {
+    background: var(--framix-accent);
+    color: var(--framix-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .comics-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .comics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .comics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tags-and-grid-section {
+        padding: 2rem 1rem;
+    }
+}
