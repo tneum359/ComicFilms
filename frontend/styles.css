@@ -835,16 +835,17 @@ body {
 /* Updated Tags Section Styles */
 .tags-and-grid-section {
     padding: 0 4rem 4rem 4rem;
-    margin-top: -3rem;
-    background: none; /* Remove background */
+    margin-top: -16rem; /* Much larger negative margin */
 }
 
 .tags-header {
     display: flex;
     gap: 3rem;
-    margin-bottom: 2rem; /* Reduced bottom margin */
+    margin-bottom: 2rem;
     align-items: flex-start;
-    background: none;
+    padding-top: 0;
+    position: relative;
+    z-index: 2;
 }
 
 .tags-title {
@@ -980,9 +981,11 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3.5rem 3rem;
-    margin: 4rem auto;
+    margin: 0.5rem auto; /* Minimal margin */
     max-width: 1600px;
     padding: 0 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .grid-comic {
@@ -1205,4 +1208,29 @@ body.dark-mode {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--framix-accent);
+}
+
+/* Update comic carousel container spacing */
+.comic-carousel-container {
+    margin-bottom: -4rem; /* Increased negative margin */
+    padding-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .tags-and-grid-section {
+        margin-top: -14rem;
+        padding: 0 2rem 4rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tags-and-grid-section {
+        margin-top: -12rem;
+        padding: 0 1.5rem 4rem 1.5rem;
+    }
+    
+    .tags-header {
+        gap: 2rem;
+    }
 }
