@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Framix - Marvel &amp; DC Movies</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=chillax@300&display=swap" rel="stylesheet">
+</head>
+<body class="bg-framix-light dark-mode" style="cursor: default;">
+<div class="w-full" id="wrap">
+<header class="framix-header shadow" id="header">
+  <!-- Logo container -->
+  <div class="logo-container">
+    <a href="/">
+      <img alt="Framix Logo" class="framix-logo" src="images/branding/framix-logo.png">
+    </a>
+  </div>
+  
+  <!-- Center navigation -->
+  <nav class="center-nav">
+    <ul class="flex space-x-16"> <!-- Increased spacing -->
+      <li>
+        <a class="nav-link text-2xl font-bold text-primary hover:text-secondary" href="#">
+          HOT <span class="nav-icon">🔥</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link text-2xl font-bold text-primary hover:text-secondary" href="#">
+          GENRES <span class="nav-icon">📚</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link text-2xl font-bold text-primary hover:text-secondary" href="#">
+          REQUEST <span class="nav-icon">💭</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  
+  <!-- Right-aligned controls - only search button -->
+  <div class="right-controls">
+    <button class="search-button rounded-lg text-xl" data-llama-id="32">Search</button>
+  </div>
+</header>
+
+<!-- Add this above the comic-display section -->
+<div class="title-container">
+    <h1 class="new-arrivals-title">New Arrivals</h1>
+</div>
+
+<!-- New simplified comic display -->
+<section class="comic-display">
+  <div class="comic-container">
+    <div class="comic position-1">
+      <img src="images/marvel/spider-man.jpg" alt="Spider-Man: No Way Home">
+      <h3>Spider-Man: No Way Home</h3>
+    </div>
+    <div class="comic position-2">
+      <img src="images/marvel/iron-man.jpg" alt="Iron Man: Armored Legacy">
+      <h3>Iron Man: Armored Legacy</h3>
+    </div>
+    <div class="comic position-3">
+      <img src="images/dc/batman.jpg" alt="Batman: The Dark Knight">
+      <h3>Batman: The Dark Knight</h3>
+    </div>
+    <div class="comic position-4">
+      <img src="images/marvel/avengers.jpg" alt="Avengers: Endgame">
+      <h3>Avengers: Endgame</h3>
+    </div>
+    <div class="comic position-5">
+      <img src="images/dc/superman.jpg" alt="Superman: Man of Steel">
+      <h3>Superman: Man of Steel</h3>
+    </div>
+  </div>
+</section>
+
+<section class="tags-and-grid-section">
+    <div class="tags-header">
+        <h2 class="tags-title">tags</h2>
+        <div class="tags-list">
+            <!-- Tags flowing right of the title -->
+            <label class="tag-checkbox">
+                <input type="checkbox" name="tag" value="spiderman">
+                <span class="tag-button">
+                    <span class="tag-icon">🕷️</span>
+                    spiderman
+                </span>
+            </label>
+            <label class="tag-checkbox">
+                <input type="checkbox" name="tag" value="batman">
+                <span class="tag-button">
+                    <span class="tag-icon">🦇</span>
+                    batman
+                </span>
+            </label>
+            <label class="tag-checkbox">
+                <input type="checkbox" name="tag" value="superman">
+                <span class="tag-button">
+                    <span class="tag-icon">👊</span>
+                    superman
+                </span>
+            </label>
+            <label class="tag-checkbox">
+                <input type="checkbox" name="tag" value="manga">
+                <span class="tag-button">
+                    <span class="tag-icon">📖</span>
+                    manga
+                </span>
+            </label>
+            <label class="tag-checkbox">
+                <input type="checkbox" name="tag" value="wonder-woman">
+                <span class="tag-button">
+                    <span class="tag-icon">⚡</span>
+                    wonder woman
+                </span>
+            </label>
+            <label class="tag-checkbox">
+                <input type="checkbox" name="tag" value="avengers">
+                <span class="tag-button">
+                    <span class="tag-icon">🛡️</span>
+                    avengers
+                </span>
+            </label>
+            <label class="tag-checkbox">
+                <input type="checkbox" name="tag" value="flash">
+                <span class="tag-button">
+                    <span class="tag-icon">⚡</span>
+                    the flash
+                </span>
+            </label>
+        </div>
+    </div>
+
+    <div class="comics-grid">
+        <div class="grid-comic" data-tags="spiderman,avengers">
+            <div class="comic-image-container">
+                <img src="images/marvel/spider-man.jpg" alt="Spider-Man">
+                <h3 class="comic-title">spider-man: no way home</h3>
+            </div>
+            <div class="comic-tags">
+                <span class="comic-tag">spiderman</span>
+                <span class="comic-tag">avengers</span>
+            </div>
+        </div>
+
+        <div class="grid-comic" data-tags="avengers,iron-man">
+            <div class="comic-image-container">
+                <img src="images/marvel/iron-man.jpg" alt="Iron Man">
+                <h3 class="comic-title">iron man: armored legacy</h3>
+            </div>
+            <div class="comic-tags">
+                <span class="comic-tag">avengers</span>
+                <span class="comic-tag">iron-man</span>
+            </div>
+        </div>
+
+        <div class="grid-comic" data-tags="batman,dc">
+            <div class="comic-image-container">
+                <img src="images/dc/batman.jpg" alt="Batman">
+                <h3 class="comic-title">batman: the dark knight</h3>
+            </div>
+            <div class="comic-tags">
+                <span class="comic-tag">batman</span>
+                <span class="comic-tag">dc</span>
+            </div>
+        </div>
+
+        <div class="grid-comic" data-tags="avengers,marvel">
+            <div class="comic-image-container">
+                <img src="images/marvel/avengers.jpg" alt="Avengers">
+                <h3 class="comic-title">avengers: endgame</h3>
+            </div>
+            <div class="comic-tags">
+                <span class="comic-tag">avengers</span>
+                <span class="comic-tag">marvel</span>
+            </div>
+        </div>
+
+        <div class="grid-comic" data-tags="superman,dc">
+            <div class="comic-image-container">
+                <img src="images/dc/superman.jpg" alt="Superman">
+                <h3 class="comic-title">superman: man of steel</h3>
+            </div>
+            <div class="comic-tags">
+                <span class="comic-tag">superman</span>
+                <span class="comic-tag">dc</span>
+            </div>
+        </div>
+
+        <div class="grid-comic" data-tags="avengers,thor,marvel">
+            <div class="comic-image-container">
+                <img src="images/marvel/thor.jpg" alt="Thor">
+                <h3 class="comic-title">thor: love and thunder</h3>
+            </div>
+            <div class="comic-tags">
+                <span class="comic-tag">thor</span>
+                <span class="comic-tag">avengers</span>
+                <span class="comic-tag">marvel</span>
+            </div>
+        </div>
+
+        <div class="grid-comic" data-tags="wonder-woman,dc">
+            <div class="comic-image-container">
+                <img src="images/dc/wonder-woman.jpg" alt="Wonder Woman">
+                <h3 class="comic-title">wonder woman 1984</h3>
+            </div>
+            <div class="comic-tags">
+                <span class="comic-tag">wonder-woman</span>
+                <span class="comic-tag">dc</span>
+            </div>
+        </div>
+
+        <div class="grid-comic" data-tags="flash,dc">
+            <div class="comic-image-container">
+                <img src="images/dc/flash.jpg" alt="The Flash" style="object-position: top center;">
+                <h3 class="comic-title">the flash</h3>
+            </div>
+            <div class="comic-tags">
+                <span class="comic-tag">flash</span>
+                <span class="comic-tag">dc</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <p>© framix</p>
+</footer>
+</div>
+<!-- Add these script tags just before the closing </body> tag -->
+<script src="script.js"></script>
+</body></html>

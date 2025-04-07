@@ -1,4 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+    // Set dark mode as default
+    document.body.classList.add('dark-mode');
+    
     // 1. Comic Card Hover Effects
     document.querySelectorAll('.comic-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
@@ -31,29 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
             searchBar.remove();
             searchOpen = false;
         }
-    });
-
-    // 3. Dark Mode Toggle
-    const darkModeButton = document.querySelector('.dark-mode-toggle');
-    
-    let isDarkMode = false;
-    darkModeButton.addEventListener('click', () => {
-        isDarkMode = !isDarkMode;
-        document.body.classList.toggle('dark-mode');
-        const root = document.documentElement;
-        
-        if (isDarkMode) {
-            document.body.style.backgroundColor = 'var(--framix-dark)';
-            document.body.style.color = 'var(--framix-dark-text)';
-            root.style.setProperty('--framix-primary', '#fce3d4');
-            root.style.setProperty('--framix-secondary', '#f9a68b');
-        } else {
-            document.body.style.backgroundColor = 'var(--framix-light)';
-            document.body.style.color = 'var(--text-primary)';
-            root.style.setProperty('--framix-primary', '#691b1e');
-            root.style.setProperty('--framix-secondary', '#b82d28');
-        }
-        darkModeButton.innerHTML = isDarkMode ? '☀️' : '🌙';
     });
 
     // 4. Reading Progress Tracker

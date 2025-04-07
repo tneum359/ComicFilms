@@ -1,9 +1,9 @@
 /* Framix Color System */
 :root {
   /* Primary Brand Colors */
-  --framix-primary: #691b1e;    /* Deep red - main brand color */
-  --framix-secondary: #b82d28;  /* Bright red - secondary brand color */
-  --framix-accent: #f05660;     /* Light red - accent color */
+  --framix-primary: #b91c1c;    /* Deep red - main brand color */
+  --framix-secondary: #dc2626;  /* Bright red - secondary brand color */
+  --framix-accent: #ef4444;     /* Light red - accent color */
   --framix-highlight: #f9a68b;  /* Salmon - highlight color */
   --framix-light: #fce3d4;      /* Light pink - background color */
   
@@ -25,6 +25,10 @@
   --button-hover: var(--framix-secondary);
   --footer-bg: var(--framix-gray-100);
   --footer-text: var(--framix-gray-500);
+
+  /* Enhanced Color Variables */
+  --framix-hover: #991b1b; /* Darker red */
+  --framix-text: #f8f8f8; /* Light text */
 }
 
 /* Framix Typography */
@@ -198,19 +202,25 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: var(--framix-text);
 }
 
 .nav-icon {
   font-size: 1.25rem;
   display: inline-flex;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover {
   background-color: var(--framix-primary);
-  color: var(--framix-light) !important; /* Light colored text */
+  color: var(--framix-accent) !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover .nav-icon {
+  transform: scale(1.2);
 }
 
 /* Base Styles */
@@ -315,7 +325,7 @@ img {
 /* Header & Footer Styles */
 .framix-header {
   position: relative;
-  background-color: var(--framix-light);
+  background-color: var(--framix-dark);
   border-bottom: 3px solid var(--framix-primary);
   transition: all 0.3s ease;
   padding: 1.25rem 2rem;
@@ -368,7 +378,7 @@ img {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--framix-primary);
+  color: var(--framix-text);
 }
 
 /* Dark Mode Navigation */
@@ -387,17 +397,15 @@ img {
   right: 2rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Increased gap */
 }
 
 /* Search Button */
 .search-button {
-  background-color: transparent;
-  border: 2px solid var(--framix-primary);
-  color: var(--framix-primary);
+  background: var(--framix-primary);
+  color: var(--framix-text);
+  border: none;
   padding: 0.875rem 1.5rem;
   font-size: 1.25rem;
-  border-radius: 0.5rem;
   transition: all 0.3s ease;
 }
 
@@ -413,34 +421,11 @@ img {
   color: var(--framix-accent);
 }
 
-/* Dark Mode Toggle */
-.dark-mode-toggle {
-  background-color: transparent;
-  border: 2px solid var(--framix-primary);
-  color: var(--framix-primary);
-  padding: 0.875rem 1.5rem;
-  font-size: 1.25rem;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-/* Dark Mode Toggle in Dark Mode */
-.dark-mode .dark-mode-toggle {
-  border-color: var(--framix-light);
-  color: var(--framix-light);
-}
-
-.dark-mode .dark-mode-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: var(--framix-accent);
-  color: var(--framix-accent);
-}
-
 /* Search Input Styles */
 .search-input {
-  background-color: var(--framix-light);
-  color: var(--framix-primary);
+  background: var(--framix-dark);
   border: 2px solid var(--framix-primary);
+  color: var(--framix-text);
   border-radius: 0.5rem;
   padding: 0.875rem 1.5rem;
   font-size: 1.25rem;
@@ -599,30 +584,7 @@ nav ul {
 
 /* Dark Mode Toggle Button */
 .dark-mode-toggle {
-  background-color: transparent;
-  border: 2px solid var(--framix-primary);
-  color: var(--framix-primary);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.dark-mode-toggle:hover {
-  background-color: var(--framix-primary);
-  color: var(--framix-light);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Dark Mode Toggle Button - Dark Mode State */
-.dark-mode .dark-mode-toggle {
-  border-color: var(--framix-accent);
-  color: var(--framix-accent);
-}
-
-.dark-mode .dark-mode-toggle:hover {
-  background-color: var(--framix-accent);
-  color: var(--framix-dark);
+  display: none;
 }
 
 /* Global Font Settings */
@@ -645,7 +607,7 @@ body {
   font-weight: 300;
   font-size: 4.5rem;
   color: var(--framix-primary);
-  text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 4px rgba(185, 28, 28, 0.3);
   margin: 0;
   text-transform: lowercase;
 }
@@ -733,7 +695,7 @@ body {
   transform: translateX(-50%) translateZ(0);
   z-index: 3;
   opacity: 1;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 15px 40px rgba(185, 28, 28, 0.4);
 }
 
 .position-4 {
@@ -815,7 +777,7 @@ body {
 
 .dark-mode .new-arrivals-title {
   color: var(--framix-accent);
-  text-shadow: 3px 3px 0 rgba(255,255,255,0.1);
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.1);
 }
 
 .dark-mode .comic {
@@ -828,12 +790,12 @@ body {
 
 /* Remove transform scale on hover, only keep shadow enhancement */
 .comic:hover {
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 15px 40px rgba(185, 28, 28, 0.4);
 }
 
 /* Remove any special hover transforms for position-3 */
 .comic.position-3:hover {
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 50px rgba(185, 28, 28, 0.5);
 }
 
 /* Responsive Adjustments */
@@ -867,38 +829,42 @@ body {
 }
 
 .comic:hover {
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 40px rgba(185, 28, 28, 0.4);
 }
 
 /* Updated Tags Section Styles */
 .tags-and-grid-section {
-    padding: 2rem 4rem;
-    background: var(--framix-light);
+    padding: 0 4rem 4rem 4rem;
+    margin-top: -3rem;
+    background: none; /* Remove background */
 }
 
 .tags-header {
     display: flex;
     gap: 3rem;
-    margin-bottom: 3rem;
-    align-items: flex-start; /* Align items to top */
+    margin-bottom: 2rem; /* Reduced bottom margin */
+    align-items: flex-start;
+    background: none;
 }
 
 .tags-title {
     font-family: 'Chillax', sans-serif;
     font-weight: 300;
-    font-size: 4.5rem; /* Much larger title */
+    font-size: 4.5rem;
     color: var(--framix-primary);
     text-transform: lowercase;
     margin: 0;
-    min-width: max-content; /* Prevent title from wrapping */
+    min-width: max-content;
+    text-shadow: 2px 2px 4px rgba(185, 28, 28, 0.3);
 }
 
 .tags-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    padding-top: 1rem; /* Align with the middle of the title */
+    gap: 0.75rem; /* Slightly reduced gap between tags */
+    padding-top: 1rem;
     flex: 1;
+    background: none;
 }
 
 .tag-checkbox {
@@ -920,15 +886,15 @@ body {
     gap: 0.5rem;
     font-family: 'Chillax', sans-serif;
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: 1rem;
     background: transparent;
     border: 2px solid var(--framix-primary);
     color: var(--framix-primary);
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
+    padding: 0.4rem 1.2rem;
+    border-radius: 0; /* Completely sharp corners */
     transition: all 0.3s ease;
     text-transform: lowercase;
-    white-space: nowrap; /* Keep tag text on one line */
+    white-space: nowrap;
 }
 
 .tag-icon {
@@ -938,101 +904,227 @@ body {
 /* Checkbox checked state */
 .tag-checkbox input:checked + .tag-button {
     background: var(--framix-primary);
-    color: white;
+    color: var(--framix-text);
 }
 
 .tag-checkbox:hover .tag-button {
-    background: var(--framix-primary);
-    color: white;
-    opacity: 0.8;
+    background: var(--framix-hover);
+    border-color: var(--framix-hover);
+    color: var(--framix-text);
 }
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
-    .tags-header {
-        flex-direction: column;
-        gap: 1.5rem;
+@media (max-width: 1600px) {
+    .comics-grid {
+        gap: 3rem 2.5rem;
+        max-width: 1400px;
     }
-
-    .tags-title {
-        font-size: 4rem;
-    }
-
-    .tags-list {
-        padding-top: 0;
+    
+    .grid-comic {
+        max-width: 280px;
     }
 }
 
-@media (max-width: 768px) {
-    .tags-and-grid-section {
-        padding: 2rem 2rem;
+@media (max-width: 1400px) {
+    .comics-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem 2.5rem;
     }
+    
+    .grid-comic {
+        max-width: 300px;
+    }
+}
 
-    .tags-title {
-        font-size: 3.5rem;
+@media (max-width: 1024px) {
+    .comics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .comics-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .grid-comic {
+        max-width: 320px;
+    }
+    
+    .tags-and-grid-section {
+        padding: 0 1rem 3rem 1rem;
     }
 }
 
 /* Dark mode adjustments */
 .dark-mode .tag-button {
-    border-color: var(--framix-accent);
-    color: var(--framix-accent);
+    border-color: var(--framix-primary);
+    color: var(--framix-primary);
 }
 
 .dark-mode .tag-checkbox input:checked + .tag-button {
-    background: var(--framix-accent);
-    color: var(--framix-dark);
+    background: var(--framix-primary);
+    color: var(--framix-text);
 }
 
 .dark-mode .tag-checkbox:hover .tag-button {
-    background: var(--framix-accent);
-    color: var(--framix-dark);
-    opacity: 0.8;
+    background: var(--framix-hover);
+    border-color: var(--framix-hover);
+    color: var(--framix-text);
 }
 
-/* Comics Grid */
+/* Updated Comics Grid */
 .comics-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 3.5rem 3rem;
+    margin: 4rem auto;
+    max-width: 1600px;
+    padding: 0 2rem;
 }
 
 .grid-comic {
     position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 0;
     transition: all 0.3s ease;
-    aspect-ratio: 2/3;
     cursor: pointer;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: none; /* Remove background */
 }
 
-.grid-comic:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+.comic-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(185, 28, 28, 0.2);
 }
 
-.grid-comic img {
+.comic-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    background: var(--framix-dark);
 }
 
-.grid-comic h3 {
+/* Specific style for Flash comic if needed */
+.grid-comic[data-tags*="flash"] .comic-image-container img {
+    object-position: top center; /* Adjust image position */
+}
+
+.comic-title {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,0.8);
-    color: white;
-    padding: 0.75rem;
+    background: rgba(26, 26, 26, 0.9);
+    color: var(--framix-text);
+    padding: 1rem;
     margin: 0;
     font-family: 'Chillax', sans-serif;
     font-weight: 300;
     font-size: 1rem;
     text-align: center;
     text-transform: lowercase;
+    border-top: 2px solid var(--framix-primary);
+}
+
+.comic-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0;
+    background: none;
+}
+
+.comic-tag {
+    background: var(--framix-primary);
+    color: var(--framix-text);
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0;
+    text-transform: lowercase;
+    transition: all 0.3s ease;
+}
+
+.comic-tag:hover {
+    background: var(--framix-accent);
+}
+
+/* Update hover effect to only affect image container */
+.grid-comic:hover .comic-image-container {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(185, 28, 28, 0.3);
+}
+
+/* Dark Mode Default Styles */
+:root {
+    --framix-dark: #1a1a1a;
+    --framix-light: #ffffff;
+    --framix-primary: #b91c1c;
+    --framix-secondary: #dc2626;
+    --framix-accent: #ef4444;
+}
+
+body.dark-mode {
+    background-color: var(--framix-dark);
+    color: var(--framix-light);
+}
+
+.dark-mode .tags-and-grid-section {
+    background: var(--framix-dark);
+}
+
+.dark-mode .tags-title {
+    color: var(--framix-primary);
+}
+
+.dark-mode .tag-button {
+    border-color: var(--framix-primary);
+    color: var(--framix-primary);
+}
+
+.dark-mode .tag-checkbox input:checked + .tag-button {
+    background: var(--framix-primary);
+    color: var(--framix-text);
+}
+
+.dark-mode .tag-checkbox:hover .tag-button {
+    background: var(--framix-hover);
+    border-color: var(--framix-hover);
+    color: var(--framix-text);
+}
+
+.dark-mode .grid-comic {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.dark-mode .comic-title {
+    background: rgba(0,0,0,0.9);
+    color: var(--framix-text);
+}
+
+.dark-mode .comic-tag {
+    background: var(--framix-primary);
+    color: var(--framix-text);
+}
+
+/* Updated hover effects */
+.grid-comic:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(185, 28, 28, 0.3); /* Red-tinted shadow */
+}
+
+.grid-comic:hover .comic-tag {
+    opacity: 0.9;
 }
 
 /* Footer */
@@ -1054,35 +1146,63 @@ body {
 }
 
 .dark-mode .tag-button {
-    border-color: var(--framix-accent);
-    color: var(--framix-accent);
+    border-color: var(--framix-primary);
+    color: var(--framix-primary);
 }
 
 .dark-mode .tag-button:hover,
 .dark-mode .tag-button.active {
+    background: var(--framix-primary);
+    color: var(--framix-text);
+}
+
+/* Dark mode adjustments for comic tags */
+.dark-mode .comic-tag {
+    background: var(--framix-primary);
+    color: var(--framix-text);
+}
+
+/* Hover effect adjustments */
+.grid-comic:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(185, 28, 28, 0.3); /* Red-tinted shadow */
+}
+
+.grid-comic:hover .comic-tag {
+    opacity: 0.9;
+}
+
+/* Loading States */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+    background: var(--framix-primary);
+}
+
+/* Selection Color */
+::selection {
+    background: var(--framix-primary);
+    color: var(--framix-text);
+}
+
+/* Scrollbar (Webkit browsers) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--framix-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--framix-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
     background: var(--framix-accent);
-    color: var(--framix-dark);
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .comics-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 900px) {
-    .comics-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .comics-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .tags-and-grid-section {
-        padding: 2rem 1rem;
-    }
 }
