@@ -145,7 +145,7 @@ def inpaint_panel(pipeline, panel_image, mask_image, original_panel_path, prompt
         logging.error(f"Failed to inpaint panel {original_panel_path}: {str(e)}")
         raise
 
-def process_all_panels(start_panel=44):
+def process_all_panels(start_panel=0):
     """
     Process all panels using existing masks
     
